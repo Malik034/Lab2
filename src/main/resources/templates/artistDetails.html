@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Song Details</title>
+
+</head>
+<body>
+<header>
+    <h1 th:text="${artist.firstName} + ' ' + ${artist.lastName}">Artist</h1>
+</header>
+
+<section>
+
+    <form th:method="GET" th:action="@{/artistDetails}">
+        <h2>Biography</h2>
+        <td th:text="${artist.bio}"></td>
+
+        <h2>Id</h2>
+        <td th:text="${artist.id}"></td>
+
+        <h2>Songs:</h2>
+        <ul>
+            <li th:each="song : ${songs}" th:text="${song.title} + ' ' + ${song.genre}"></li>
+        </ul>
+    </form>
+</section>
+
+</body>
+</html>
