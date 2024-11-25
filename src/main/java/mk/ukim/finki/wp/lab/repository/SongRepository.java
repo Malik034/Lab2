@@ -38,15 +38,7 @@ public class SongRepository {
         return songs;
     }
 
-    public Song findByTrackId(String trackId) {
-        for (Song song : songs) {
-            if (song.getTrackId().equals(trackId)) {
-                return song;
-            }
-        }
-        return null;
-    }
-
+    
     public Artist addArtistToSong(Artist artist, Song song){
         song.addPerformer(artist);
         return artist;

@@ -1,5 +1,4 @@
 /*
-
 package mk.ukim.finki.wp.lab.web;
 
 import mk.ukim.finki.wp.lab.service.ArtistService;
@@ -52,4 +51,4 @@ public class ArtistServlet extends HttpServlet {
     }
 }
 
- */
+*/

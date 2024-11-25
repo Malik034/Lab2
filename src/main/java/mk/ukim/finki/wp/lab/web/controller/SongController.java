@@ -30,8 +30,8 @@ public class SongController {
         model.addAttribute("songList", songList);
         if(error != null){
             model.addAttribute("error", error);
-        }
 
+        }
         return "listSongs";
     }
 
@@ -44,15 +44,14 @@ public class SongController {
 
     @PostMapping("/add-form")
     public String saveSong(@RequestParam String title,
-                           @RequestParam String trackId,
                            @RequestParam String genre,
                            @RequestParam int releaseYear,
                            @RequestParam Long albumId){
 
         Album album = albumService.findById(albumId);
         Song song = new Song(title, genre, releaseYear, album);
-        song.setTrackId(trackId);
 
+       // song.setId(Long.valueOf(trackId));
         songService.saveSong(song);
 
         return "redirect:/songs";
@@ -88,7 +87,7 @@ public class SongController {
        // String trackId = song.getTrackId();
 
         song.setTitle(title);
-        song.setTrackId(trackId);
+        song.setId(Long.valueOf(trackId));
         song.setGenre(genre);
         song.setReleaseYear(releaseYear);
 
@@ -97,7 +96,6 @@ public class SongController {
 
         return "redirect:/songs";
     }
-
 
     @PostMapping("/delete/{id}")
     public String deleteSong(@PathVariable Long id){

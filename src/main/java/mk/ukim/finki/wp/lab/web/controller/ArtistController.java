@@ -37,3 +37,4 @@ public class ArtistController {
         return "redirect:/artist?trackId=" + trackId;
     }
 }
+

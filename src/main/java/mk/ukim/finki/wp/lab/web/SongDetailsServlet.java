@@ -37,7 +37,7 @@ public class SongDetailsServlet extends HttpServlet {
                 .buildExchange(req, resp);
 
         String trackId = req.getParameter("trackId");
-        Song song = songService.findByTrackId(trackId);
+        Song song = songService.findById(Long.valueOf(trackId));
 
         WebContext context = new WebContext(webExchange);
         context.setVariable("song", song);
@@ -51,7 +51,7 @@ public class SongDetailsServlet extends HttpServlet {
         String artistId = req.getParameter("artistId");
 
         songService.addArtistToSong(artistService.findById(Long.parseLong(artistId)),
-                songService.findByTrackId(trackId));
+                songService.findById(Long.valueOf(trackId)));
 
         resp.sendRedirect(req.getContextPath() + "/songDetails?trackId=" + trackId);
     }

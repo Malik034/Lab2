@@ -23,7 +23,7 @@
     <form th:method="POST" th:action="@{/artist}">
         <div th:each="song : ${songList}">
             <label>
-                <input type="radio" th:name="'trackId'" th:value="${song.trackId}">
+                <input type="radio" th:name="'trackId'" th:value="${song.id}">
                 Title: <span th:text="${song.title}"></span>,
                 Genre: <span th:text="${song.genre}"></span>,
                 Release Year: <span th:text="${song.releaseYear}"></span>,

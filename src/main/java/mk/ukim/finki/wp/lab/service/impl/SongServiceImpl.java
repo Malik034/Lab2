@@ -35,13 +35,6 @@ public class SongServiceImpl implements SongService {
         return songRepository.addArtistToSong(artist, song);
     }
 
-
-    @Override
-    public Song findByTrackId(String trackId) {
-        return songRepository.findByTrackId(trackId);
-    }
-
-
     @Override
     public Song findById(Long id){
         return songRepository.findById(id);
@@ -49,7 +42,6 @@ public class SongServiceImpl implements SongService {
 
     @Override
     public Song saveSong(Song song){
-
         return songRepository.saveSong(song);
     }
 

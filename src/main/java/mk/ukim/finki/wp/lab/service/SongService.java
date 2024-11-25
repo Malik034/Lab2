@@ -11,7 +11,6 @@ import java.util.List;
 public interface SongService {
     List<Song> listSongs();
     Artist addArtistToSong(Artist artist, Song song);
-    public Song findByTrackId(String trackId);
     public List<Song> findTrackByArtistId(int artistId); //DOPOLNITELNO
     public Song findById(Long id);
     public Song saveSong(Song song);

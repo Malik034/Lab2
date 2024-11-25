@@ -22,7 +22,6 @@ import java.util.List;
 
 @WebServlet(name="ArtistDetailsServlet", urlPatterns = {"/artistDetails"})
 public class ArtistDetailsServlet extends HttpServlet {
-
     private final SongService songService;
     private final ArtistService artistService;
     private final SpringTemplateEngine templateEngine;
@@ -60,7 +59,7 @@ public class ArtistDetailsServlet extends HttpServlet {
         String artistId = req.getParameter("artistId");
         String trackId = req.getParameter("trackId");
 
-        artistService.addSongToArtist(songService.findByTrackId(trackId),
+        artistService.addSongToArtist(songService.findById(Long.valueOf(trackId)),
                 artistService.findById(Long.parseLong(artistId)));
 
         resp.sendRedirect(req.getContextPath() + "/artistDetails?artistId=" + artistId + "&trackId=" + trackId);
