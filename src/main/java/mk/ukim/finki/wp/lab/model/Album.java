@@ -1,11 +1,12 @@
 package mk.ukim.finki.wp.lab.model;
 
-import jakarta.persistence.GeneratedValue;
-        import jakarta.persistence.GenerationType;
-        import jakarta.persistence.Id;
-        import lombok.Data;
+import jakarta.persistence.*;
+import lombok.Data;
         import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+@Entity
 @Data
 @NoArgsConstructor
 public class Album {
@@ -16,6 +17,9 @@ public class Album {
     private String name;
     private String genre;
     private String releaseYear;
+
+    @OneToMany(mappedBy = "album")
+    private List<Song> songs;
 
     public Album(String name, String genre, String releaseYear) {
         this.id = (long)(Math.random() * 1000);

@@ -7,25 +7,25 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 @Data
 @NoArgsConstructor
 public class Song {
-
-    private String title;
-    private String genre;
-    private int releaseYear;
-    private List<Artist> performers;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
+    private String genre;
+    private int releaseYear;
+
+    private List<Artist> performers;
+
     @ManyToOne
     private Album album;
 
     public Song(String title, String genre, int releaseYear, Album album) {
-         //this.trackId = trackId;
-        this.id = (long)(Math.random() * 1000);
         this.title = title;
         this.genre = genre;
         this.releaseYear = releaseYear;
