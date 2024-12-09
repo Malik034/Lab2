@@ -1,4 +1,7 @@
+
+/*
 package mk.ukim.finki.wp.lab.repository;
+
 
 import jakarta.annotation.PostConstruct;
 import mk.ukim.finki.wp.lab.model.Artist;
@@ -16,11 +19,11 @@ public class ArtistRepository {
 
     @PostConstruct
     public void init(){
-        artists.add(new Artist(1L, "John", "Blake", "Rapper"));
-        artists.add(new Artist(2L, "Joe", "Parker", "Pop Singer"));
-        artists.add(new Artist(3L, "Cindy", "Smith", "Rock Singer"));
-        artists.add(new Artist(4L, "Sarah", "Red", "Classical Singer"));
-        artists.add(new Artist(5L, "Rose", "Woods", "Rapper"));
+        artists.add(new Artist( "John", "Blake", "Rapper"));
+        artists.add(new Artist( "Joe", "Parker", "Pop Singer"));
+        artists.add(new Artist( "Cindy", "Smith", "Rock Singer"));
+        artists.add(new Artist( "Sarah", "Red", "Classical Singer"));
+        artists.add(new Artist( "Rose", "Woods", "Rapper"));
     }
 
     public List<Artist> findAll(){
@@ -43,3 +46,5 @@ public class ArtistRepository {
     }
 
 }
+
+ */

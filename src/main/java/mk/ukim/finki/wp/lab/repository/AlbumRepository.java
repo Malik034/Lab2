@@ -1,4 +1,6 @@
+/*
 package mk.ukim.finki.wp.lab.repository;
+
 
 import jakarta.annotation.PostConstruct;
 import mk.ukim.finki.wp.lab.model.Album;
@@ -35,3 +37,4 @@ public class AlbumRepository {
     }
 
 }
+*/

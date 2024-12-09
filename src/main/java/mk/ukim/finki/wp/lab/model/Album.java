@@ -2,13 +2,13 @@ package mk.ukim.finki.wp.lab.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-        import lombok.NoArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
 @Data
 @NoArgsConstructor
+@Entity
 public class Album {
 
     @Id
@@ -22,7 +22,6 @@ public class Album {
     private List<Song> songs;
 
     public Album(String name, String genre, String releaseYear) {
-        this.id = (long)(Math.random() * 1000);
         this.name = name;
         this.genre = genre;
         this.releaseYear = releaseYear;

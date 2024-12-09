@@ -65,5 +65,3 @@ public class ArtistDetailsServlet extends HttpServlet {
         resp.sendRedirect(req.getContextPath() + "/artistDetails?artistId=" + artistId + "&trackId=" + trackId);
     }
 }
-
-

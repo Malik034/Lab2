@@ -1,3 +1,4 @@
+/*
 package mk.ukim.finki.wp.lab.repository;
 
 import jakarta.annotation.PostConstruct;
@@ -38,7 +39,7 @@ public class SongRepository {
         return songs;
     }
 
-    
+
     public Artist addArtistToSong(Artist artist, Song song){
         song.addPerformer(artist);
         return artist;
@@ -80,5 +81,6 @@ public class SongRepository {
     public void deleteSong(Song song){
         songs.remove(song);
     }
-
 }
+
+ */

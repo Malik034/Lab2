@@ -1,4 +1,3 @@
-
 package mk.ukim.finki.wp.lab.web;
 
 import jakarta.servlet.ServletException;
@@ -56,5 +55,3 @@ public class SongDetailsServlet extends HttpServlet {
         resp.sendRedirect(req.getContextPath() + "/songDetails?trackId=" + trackId);
     }
 }
-
-

@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 @Data
 @NoArgsConstructor
+@Entity
 public class Song {
 
     @Id
@@ -20,10 +21,12 @@ public class Song {
     private String genre;
     private int releaseYear;
 
-    private List<Artist> performers;
-
     @ManyToOne
     private Album album;
+
+    @OneToMany
+    private List<Artist> performers;
+
 
     public Song(String title, String genre, int releaseYear, Album album) {
         this.title = title;
@@ -39,4 +42,3 @@ public class Song {
         }
     }
 }
-

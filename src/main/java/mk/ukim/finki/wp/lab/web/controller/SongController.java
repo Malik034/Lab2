@@ -1,4 +1,3 @@
-
 package mk.ukim.finki.wp.lab.web.controller;
 
 import mk.ukim.finki.wp.lab.model.Album;
@@ -51,7 +50,7 @@ public class SongController {
         Album album = albumService.findById(albumId);
         Song song = new Song(title, genre, releaseYear, album);
 
-       // song.setId(Long.valueOf(trackId));
+        // song.setId(Long.valueOf(trackId));
         songService.saveSong(song);
 
         return "redirect:/songs";
@@ -84,7 +83,7 @@ public class SongController {
             return "redirect:/songs?error=SongNotFound";
         }
 
-       // String trackId = song.getTrackId();
+        // String trackId = song.getTrackId();
 
         song.setTitle(title);
         song.setId(Long.valueOf(trackId));
@@ -107,7 +106,4 @@ public class SongController {
 
         return "redirect:/songs";
     }
-
 }
-
-
