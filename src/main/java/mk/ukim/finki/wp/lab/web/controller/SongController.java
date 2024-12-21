@@ -89,8 +89,8 @@ public class SongController {
         song.setId(Long.valueOf(trackId));
         song.setGenre(genre);
         song.setReleaseYear(releaseYear);
-
         song.setAlbum(albumService.findById(albumId));
+
         songService.saveSong(song);
 
         return "redirect:/songs";

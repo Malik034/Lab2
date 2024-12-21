@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -30,7 +31,9 @@
                 Album: <span th:text="${song.album.name}"></span>
             </label><br>
         </div>
+
         <input type="submit" value="Submit">
+
     </form>
 
 
@@ -53,18 +56,29 @@
             <td><span th:text="${song.album.name}"></span></td>
             <td>
 
-                <a th:href="@{/songs/edit-form/{songId}(songId=${song.id})}">Edit</a>
+                <th:block sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{/songs/edit-form/{songId}(songId=${song.id})}">Edit</a>
 
-                <form th:action="@{/songs/delete/{id}(id=${song.id})}" method="post" style="display:inline">
-                    <button type="submit">Delete</button>
-                </form>
+
+                    <form th:action="@{/songs/delete/{id}(id=${song.id})}" method="post" style="display:inline">
+
+                        <button type="submit">Delete</button>
+
+                    </form>
+                </th:block>
             </td>
         </tr>
         </tbody>
     </table>
 
     <br>
+    <th:block sec:authorize="hasRole('ADMIN')">
         <a href="/songs/add-form"> Add New Song</a>
+    </th:block>
+
+    <a sec:authorize="isAuthenticated()" href="/logout">
+        <i ></i> Logout
+    </a>
 
 </main>
 </body>
